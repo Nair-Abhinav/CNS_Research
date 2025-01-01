@@ -43,6 +43,7 @@ def add_authentication(data: bytes, auth_key: bytes) -> bytes:
     hmac_digest = hmac.new(auth_key, data, hashlib.sha256).digest()
     return data + hmac_digest
 
+
 def encrypt_image(image_path: str, key: str) -> (str, bytes, np.ndarray):
     # Open the image and convert to grayscale
     original_image = Image.open(image_path).convert('L')
@@ -160,3 +161,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
